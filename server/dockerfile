@@ -3,8 +3,8 @@ WORKDIR /usr/app
 EXPOSE 80
 
 RUN apt-get update && apt install -y git-all
-RUN git clone https://github.com/Raytem/NestJS_chatApp_server.git
-WORKDIR /usr/app/NestJS_chatApp_server
+RUN git clone https://github.com/Raytem/chatApp_fullstack.git
+WORKDIR /usr/app/chatApp_fullstack/server
 
 RUN npm install
 CMD npm start

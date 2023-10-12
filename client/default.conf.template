@@ -1,0 +1,9 @@
+server {
+  listen ${CLIENT_PORT};
+  server_name ${CLIENT_HOST};
+  root /usr/app/chatApp_fullstack/client/dist;
+
+  location / {
+    try_files $uri $uri/ index.html;
+  }
+}
