@@ -1,0 +1,13 @@
+FROM node:20 as build
+WORKDIR /usr/app
+RUN apt-get update && apt install -y git-all
+RUN git clone https://github.com/Raytem/NestJS_chatApp_client.git
+WORKDIR /usr/app/NestJS_chatApp_client
+RUN npm install
+RUN npm run build
+
+FROM nginx:1.25
+COPY --from=build /usr/app/NestJS_chatApp_client/dist /usr/share/nginx/html
+COPY ./default.conf.template /etc/nginx/templates/default.conf.template
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

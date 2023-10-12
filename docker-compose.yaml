@@ -1,0 +1,67 @@
+version: '3.5'
+name: chat_app
+
+networks:
+  inside_net:
+    name: inside_net
+    driver: bridge
+
+services: 
+  client:
+    build: ./client
+    container_name: client
+    ports:
+      - 5173:5173
+    environment: 
+      - 'VITE_SERVER_URL=https://localhost:80'
+      - 'CLIENT_PORT=5173'
+      - 'CLIENT_HOST=localhost'
+
+  server:
+    build: ./server
+    container_name: server
+    ports:
+      - 80:80
+    environment:
+      - 'NODE_ENV=production'
+      - 'PORT=80'
+      - 'SERVER_HOST=localhost'
+      - 'DB_HOST=postgres_db'
+      - 'REDIS_HOST=redis'
+      - 'DB_PASSWORD=123'
+      - 'CLIENT_URL=http://localhost:5173'
+    depends_on:
+      - postgres_db
+      - redis
+    networks:
+      - inside_net
+
+  postgres_db:
+    image: postgres:16.0
+    container_name: postgres_db
+    environment: 
+      - 'POSTGRES_DB=chatapp_db'
+      - 'PGDATA=/var/lib/postgresql/data/pgdata'
+      - 'POSTGRES_PASSWORD=123'
+    volumes:
+      - ./server/chatapp_db.gz:/var/backups/chatapp_db.gz:ro
+      - ./server/fill-db.sh:/docker-entrypoint-initdb.d/fill-db.sh
+      - ./server/postgres_data:/var/lib/postgresql/data
+    networks:
+      - inside_net
+
+  redis:
+    image: redis:7.2.1
+    container_name: redis
+    networks:
+      - inside_net
+
+  adminer:
+    image: adminer:4.8.1
+    environment: 
+      - 'ADMINER_DEFAULT_SERVER=postgres_db:5432'
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - inside_net

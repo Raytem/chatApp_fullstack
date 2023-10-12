@@ -1,0 +1,21 @@
+
+.inputBlock {
+  width: 100%;
+  background: var(--accent-color);
+  border-top: px solid var(--app-divider-color);
+}
+
+.inputBlockInner {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 25px;
+  gap: 10px;
+}
+
+.input {
+  width: 100%;
+}
+
+.sendIcon {
+  animation: var(--appearance-anim) .1s;
+}

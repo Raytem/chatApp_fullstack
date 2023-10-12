@@ -1,0 +1,15 @@
+
+.curUserInfoSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 15px 0;
+
+  border-top: 1.5px solid var(--app-divider-color);
+}
+
+.curUserInfoSection_left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

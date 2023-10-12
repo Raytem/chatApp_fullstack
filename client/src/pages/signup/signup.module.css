@@ -1,0 +1,28 @@
+
+.h2 {
+  color: var(--app-black-color);
+  margin: 0;
+}
+
+.page {
+  display: flex;
+  height: 100dvh;
+  padding: 10px 10px
+}
+
+.centeredBox {
+  margin: auto;
+  width: 450px;
+  background-color: white;
+  border-radius: 10px;
+
+  box-shadow: var(--app-block-shadow);
+  animation: var(--appearance-anim) .2s;
+}
+
+.boxInner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  padding: 40px;
+}

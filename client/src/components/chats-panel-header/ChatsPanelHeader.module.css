@@ -1,0 +1,26 @@
+
+.searchInputBlock {
+  padding: 0px 10px;
+}
+
+.searchInput {
+  width: 100%;
+}
+
+.chatsPanel_mobile {
+  width: 100%;
+  max-width: none;
+}
+
+.chatsPanelInner {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.chatsPanel_header {
+  margin: 0;
+  text-align: center;
+  border-bottom: 2px solid var(--app-divider-color);
+}

@@ -1,0 +1,26 @@
+.updateUserInfoBlock_wrapper {
+  width: 100%;
+  max-width: 450px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.updateUserInfoBlock {
+  padding: 10px
+}
+
+.h2 {
+  color: var(--app-black-color);
+  margin: 0;
+}
+
+.boxInner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  
+  max-width: 450px;
+  padding: 35px;
+  background: white;
+  border-radius: 15px;
+}

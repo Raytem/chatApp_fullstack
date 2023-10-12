@@ -1,0 +1,15 @@
+
+.unreadMsgsCircle {
+  padding: 0 6px;
+  min-width: 8px;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+  line-height: 1.5;
+  border-radius: 10px;
+  font-size: 13px;
+  background: var(--app-blue-color);
+  color: white;
+  
+  animation: var(--appearance-anim) .1s;
+}

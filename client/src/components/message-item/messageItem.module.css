@@ -1,0 +1,78 @@
+.messageBlock_right, .messageBlock_left {
+  justify-content: end;
+  display: flex;
+  padding: 4px 17px;
+  transition: .3s;
+}
+
+.messageBlock_left {
+  justify-content: start;
+}
+
+.message_right, .message_left {
+  align-items: end;
+  gap: 5px;
+
+  padding-left: 20px;
+  max-width: 85%;
+  
+  position: relative;
+  padding: 7px 12px;
+  background: var(--accent-color);
+  border-radius: 15px;
+
+  animation: var(--appearance-anim) .15s;
+}
+
+.selectedMsgBlock {
+  border-radius: 7px;
+  background: rgba(0, 0, 0, 0.058);
+}
+
+.message_right {
+  background: rgb(201 190 233);
+}
+
+.message_left::before, .message_right::before {
+  content: "";
+  position: absolute;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+
+  bottom: 3px;
+}
+
+.message_left::before {
+  transform: rotate(-11deg);
+  left: -10px;
+  border-bottom: 12px solid rgb(255, 255, 255);
+}
+
+.message_right::before {
+  transform: rotate(11deg);
+  right: -10px;
+  border-bottom: 12px solid rgb(201 190 233);
+}
+
+.msgInfo {
+  display: flex;
+  align-items: center;
+  float: right;
+  gap: 5px;
+  position: relative;
+  line-height: 24px;
+  top: 6px;
+  margin-left: 12px;
+}
+
+.msgTime {
+  font-size: 11px;
+  font-style: italic;
+  color: var(--app-gray-color);
+
+  user-select: none;
+}
+
+.doneIcon {
+  animation: var(--appearance-anim) .3s;
+}

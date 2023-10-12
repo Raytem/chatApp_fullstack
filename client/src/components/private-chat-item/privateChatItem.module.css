@@ -1,0 +1,33 @@
+.noChatBlock {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(62deg, #add6ff 0%, #ecd8ff 100%);
+}
+
+.noChatBlock_info {
+  display: flex;
+  margin: auto;
+  padding: 60px 70px;
+  background: rgb(255, 255, 255);
+  border-radius: 15px;
+  box-shadow: 0 0 10px 3px rgba(110, 110, 110, 0.209);
+  animation: var(--appearance-anim) .3s;
+}
+
+.noChatBlockInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  gap: 20px;
+  font-size: 18px;
+}
+
+.privateChatBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}

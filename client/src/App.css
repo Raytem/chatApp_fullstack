@@ -1,0 +1,10 @@
+.loaderDiv {
+  display: flex;
+  height: 100dvh;
+  width: 100dvs;
+  background: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+}
+
+.loaderDiv .app_loader {
+  margin: auto;
+}

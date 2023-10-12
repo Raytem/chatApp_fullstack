@@ -1,0 +1,41 @@
+
+
+.itemListBlock {
+  margin-bottom: auto;
+  height: 100%;
+  padding: 6px 0 6px 6px;
+  overflow-y: scroll;
+}
+
+.itemListBlock::-webkit-scrollbar {
+  width: 6px;
+}
+
+.itemListBlock::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+}
+
+.itemListBlock:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.111);
+}
+
+.chatsPanel, .chatsPanel_mobile {
+  max-width: 350px;
+  width: 100%;
+  background: var(--accent-color);
+  border-right: 2px solid var(--app-divider-color);
+  padding: 10px 0 4px;
+}
+
+.chatsPanel_mobile {
+  width: 100%;
+  max-width: none;
+}
+
+.chatsPanelInner {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}

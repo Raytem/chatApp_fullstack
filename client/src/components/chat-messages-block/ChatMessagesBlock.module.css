@@ -1,0 +1,30 @@
+
+.messagesListBlock {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-top: auto;
+  padding: 10px 0 10px 6px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  background: linear-gradient(62deg, #add6ff 0%, #ecd8ff 100%);
+}
+
+.messagesListBlock::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messagesListBlock::-webkit-scrollbar-thumb {
+  background-color: #ffffff00;
+  border-radius: 5px;
+}
+
+.messagesListBlock:hover::-webkit-scrollbar-thumb {
+  background-color: #ffffff94;
+  border-radius: 5px;
+}
+
+.messageList {
+  margin-top: auto;
+}

@@ -1,0 +1,43 @@
+
+.chatHeader {
+  display: flex;
+  align-items: center;
+  min-height: 61.08px;
+  gap: 10px;
+  padding: 0px 10px;
+  background: var(--accent-color);
+  border-bottom: 1.5px solid var(--app-divider-color);
+}
+
+.chatHeader_btnBackBlock {
+  position: relative;
+}
+
+.btnBack_unreadCnt {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  z-index: 10;
+}
+
+.chatName {
+  font-size: 17px;
+}
+
+.chatHeader_right {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  flex-basis: 100%;
+}
+
+.onlineStatus {
+  font-size: 14px;
+  color: var(--app-gray-color);
+  animation: var(--appearance-anim) .1s;
+}
+
+.onlineStatus.isOnline {
+  color: var(--app-blue-color);
+}

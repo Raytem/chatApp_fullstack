@@ -1,0 +1,72 @@
+.loadingPanel {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: auto;
+  text-align: center;
+  max-width: 200px;
+  animation: var(--appearance-anim) .2s;
+}
+
+
+.messageList {
+  margin-top: auto;
+}
+
+
+.noMessagesBlock_info {
+  margin: auto;
+  padding: 30px 40px;
+  background: rgb(255, 255, 255);
+  border-radius: 15px;
+  box-shadow: 0 0 10px 3px rgba(110, 110, 110, 0.209);
+  margin-bottom: 30px;
+  animation: var(--appearance-anim) .3s;
+}
+
+.noMessagesBlockInner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  gap: 15px;
+  font-size: 16px;
+}
+
+.noMessagesBlockInner::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: -49px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+}
+
+
+.dateMarkerBlock {
+  display: flex;
+  padding: 7px 0;
+}
+
+.dateMarker {
+  margin: auto;
+  padding: 0 10px;
+
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 15px;
+  color: white;
+  background: rgba(0, 0, 0, 0.116);
+}

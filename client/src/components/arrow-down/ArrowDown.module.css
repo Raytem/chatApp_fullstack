@@ -1,0 +1,37 @@
+
+.arrowDownBtn, .arrowDownBtn_active {
+  position: absolute;
+  right: -48px;
+  bottom: 65px;
+  padding: 7px;
+  padding: 12px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0px 2px 4px -1px #00000063;
+  opacity: 0;
+
+  transition: .15s;
+}
+
+.arrowDownBtn, .arrowDownBtn_active:hover {
+  background: var(--app-blue-color);
+  color: white;
+  transition: .2s;
+}
+
+.arrowDownBtn_active {
+  right: 15px;
+  opacity: 1;
+}
+
+.arrowDownBtn_arrow {
+  margin-bottom: -7px;
+  transform: rotate(-90deg);
+}
+
+.arrowDownBtn_unreadCnt {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  box-shadow: 0px 2px 4px -1px #00000063;
+}
