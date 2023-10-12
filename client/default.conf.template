@@ -1,9 +1,9 @@
 server {
   listen ${CLIENT_PORT};
   server_name ${CLIENT_HOST};
-  root /usr/app/chatApp_fullstack/client/dist;
+  root /usr/share/nginx/html/;
 
   location / {
-    try_files $uri $uri/ index.html;
+    try_files $uri $uri/ /index.html;
   }
 }
