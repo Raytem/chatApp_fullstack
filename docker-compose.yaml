@@ -8,28 +8,31 @@ networks:
 
 services: 
   client:
-    build: ./client
+    build:
+      context: ./client
+      args: 
+        - 'VITE_SERVER_URL=https://${SERVER_HOST}:${PORT}'
     container_name: client
     ports:
-      - 5173:5173
+      - '${CLIENT_PORT}:${CLIENT_PORT}'
     environment: 
-      - 'VITE_SERVER_URL=https://localhost:80'
-      - 'CLIENT_PORT=5173'
-      - 'CLIENT_HOST=localhost'
+      - 'VITE_SERVER_URL=https://${SERVER_HOST}:${PORT}'
+      - 'CLIENT_PORT=${CLIENT_PORT}'
+      - 'CLIENT_HOST=${CLIENT_HOST}'
 
   server:
     build: ./server
     container_name: server
     ports:
-      - 80:80
+      - '${PORT}:${PORT}'
     environment:
-      - 'NODE_ENV=production'
-      - 'PORT=80'
-      - 'SERVER_HOST=localhost'
+      - 'NODE_ENV=${NODE_ENV}'
+      - 'PORT=${PORT}'
+      - 'SERVER_HOST=${SERVER_HOST}'
       - 'DB_HOST=postgres_db'
       - 'REDIS_HOST=redis'
-      - 'DB_PASSWORD=123'
-      - 'CLIENT_URL=http://localhost:5173'
+      - 'DB_PASSWORD=${DB_PASSWORD}'
+      - 'CLIENT_URL=http://${CLIENT_HOST}:${CLIENT_PORT}'
     depends_on:
       - postgres_db
       - redis
@@ -42,7 +45,7 @@ services:
     environment: 
       - 'POSTGRES_DB=chatapp_db'
       - 'PGDATA=/var/lib/postgresql/data/pgdata'
-      - 'POSTGRES_PASSWORD=123'
+      - 'POSTGRES_PASSWORD=${DB_PASSWORD}'
     volumes:
       - ./server/chatapp_db.gz:/var/backups/chatapp_db.gz:ro
       - ./server/fill-db.sh:/docker-entrypoint-initdb.d/fill-db.sh
