@@ -18,6 +18,12 @@ This application is a highly simplified clone of Telegram messenger with its bas
 	- Docker
 	- Docker compose
 
+## Before project cloning (IMPORTANT!!!)
+```bash
+#block changing of end-line symbol
+$ git config —global core.autocrlf false
+```
+
 ## Running the app
 Go to the project directory and than write the following commands:
 
